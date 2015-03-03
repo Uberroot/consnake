@@ -1,0 +1,20 @@
+AI Plans
+
+Cost Calculation:
+Simple: All non-foods are blocking
+Semi-Predictive: All self body parts are evaluated for lifetimes. Others are considered blocking.
+Predictive: Guess where all parts will be at any given time
+
+Target Selection (Based on rules):
+Avoidance: Avoid other snakes.
+Cannabal: Avoid self, actively seek others as food
+IDGAF: Act is if other snakes do not exist.
+
+Move selection:
+AI1: Move randomly. Avoid self and walls.
+AI1.1: Poisonous moves are avoided
+AI2: Zig-zag and pick up food along the way. Avoid self and walls.
+AI3: Hug outside walls as much as possible until near target, then strike.
+AI4: Randomly select the next move out of all that would move the snake closer to a target.
+AI4.1: Randomly select the next move out of all that would move the snake closer to a target. Of all moves that get snake closer to the food, prefer to hug body / avoid loops.
+AI4.2: Randomly select the next move out of all that would move the snake closer to a target. Possible entrapments are considered impassible. (if 0 moves possible at point, fill and recalculate)
