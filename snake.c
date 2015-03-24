@@ -109,10 +109,25 @@ static void sigint(int val){
 int main(int argc, char **argv){
     Input_Module inputModules[] = {Input_User1, Input_AI1, Input_AI4};
     GameState state;
-    int i, j;
+    int i, j, inputNum, inputMax;
+
+    //Validate
+    if(argc < 2)
+    {
+        printf("Usage: %s <input mode> [random seed]\n", argv[0]);
+        return 1;
+    }
+
+    inputNum = atoi(argv[1]);
+    inputMax = sizeof(inputModules) / sizeof(Input_Module) - 1;
+    if(inputNum > inputMax)
+    {
+        printf("Invalid input module\nOptions are from 0 to %d\n", inputMax);
+        return 1;
+    }
 
     //Prep dynamic functions
-    Input_Module inputter = inputModules[atoi(argv[1])];
+    Input_Module inputter = inputModules[inputNum];
 
     //Init stuff
     signal(SIGINT, sigint);
